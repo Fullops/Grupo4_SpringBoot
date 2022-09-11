@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
                 .firstName(user.getName())
                 .lastName(user.getLastName())
                 .password(encoder.encode(user.getPassword()))
-                .roleId(roleRepo.findOneByName("Estudiante").get().get_id())
+                .roleId(roleRepo.findOneByName("Ciudadano").get().get_id())
                 .build();
         userToCreate = repo.save(userToCreate);
         return CreateUserResponseDto.builder()
